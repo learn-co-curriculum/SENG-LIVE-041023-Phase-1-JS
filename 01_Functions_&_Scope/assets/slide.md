@@ -14,7 +14,7 @@ title: "P1L1 - Functions & Scope slides"
 
 <div style="display: flex; flex-direction: row">
   <div style="width: 30%">
-    <div style='position:relative; padding-bottom:calc(75.00% + 44px)'><iframe src='https://gfycat.com/ifr/SafeGloriousIslandcanary' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div><p> <a href="https://gfycat.com/safegloriousislandcanary-international-man-of-mystery-austin-powers">via Gfycat</a></p>
+    <div style='position:relative; padding-bottom:calc(75.00% + 44px)'><iframe src='https://gfycat.com/ifr/SafeGloriousIslandcanary' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div><p> <a href="https://gfycat.com/safegloriousislandcanary-international-man-of-mystery-austin-powers"></a></p>
   </div>
   <div style="width: 70%">
 
@@ -36,7 +36,7 @@ title: "P1L1 - Functions & Scope slides"
 
 <div style="display: flex; flex-direction: row">
   <div style="width: 30%">
-    <iframe src="https://giphy.com/embed/VTc0g9IKEpLAk" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/funny-everyone-VTc0g9IKEpLAk">via GIPHY</a></p>
+    <iframe src="https://giphy.com/embed/VTc0g9IKEpLAk" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/funny-everyone-VTc0g9IKEpLAk"></a></p>
   </div>
   <div style="width: 70%">
 
@@ -64,11 +64,15 @@ title: "P1L1 - Functions & Scope slides"
 Extension | Description |
 ---------|----------|
  [Draw.io Integation](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio) | for making diagrams from within VSCode 
- [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) | for opening a webpage in the browser that will reload when the code is saved 
+ [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) | for opening a webpage in the browser that will reload when the code is saved. 127.0.0.1 is an alias for localhost 
  [vscode-reveal](https://marketplace.visualstudio.com/items?itemName=evilz.vscode-reveal) | for opening the slide.md files in the browser to display slideshows
  [Tabnine AI Autocomplete](https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode) | for code completion suggestions based on context
 
 </div>
+
+---
+
+[lecture repo workflow](https://github.com/learn-co-curriculum/SENG-LIVE-041023-Phase-1-JS/blob/main/GIT.md)
 
 ---
 
@@ -93,6 +97,13 @@ Extension | Description |
 
 
 ---
+
+## Functions
+![functions](./structure-of-a-javascript-function.png)
+
+
+---
+
 
 ### () => {} vs function() {}
 
