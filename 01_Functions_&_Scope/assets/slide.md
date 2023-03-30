@@ -10,7 +10,7 @@ title: "P1L1 - Functions & Scope slides"
 
 ---
 
-#### Guidelines
+### Guidelines
 
 <div style="display: flex; flex-direction: row">
   <div style="width: 30%">
@@ -32,7 +32,7 @@ title: "P1L1 - Functions & Scope slides"
 
 ---
 
-#### Coding Along (not required!)
+### Coding Along (not required!)
 
 <div style="display: flex; flex-direction: row">
   <div style="width: 30%">
@@ -64,7 +64,7 @@ title: "P1L1 - Functions & Scope slides"
 Extension | Description |
 ---------|----------|
  [Draw.io Integation](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio) | for making diagrams from within VSCode 
- [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) | for opening a webpage in the browser that will reload when the code is saved. 127.0.0.1 is an alias for localhost 
+ [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) | for opening a webpage in the browser that will reload when the code is saved.  
  [vscode-reveal](https://marketplace.visualstudio.com/items?itemName=evilz.vscode-reveal) | for opening the slide.md files in the browser to display slideshows
  [Tabnine AI Autocomplete](https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode) | for code completion suggestions based on context
 
@@ -72,11 +72,33 @@ Extension | Description |
 
 ---
 
-[lecture repo workflow](https://github.com/learn-co-curriculum/SENG-LIVE-041023-Phase-1-JS/blob/main/GIT.md)
+### Live Server
+
+![live-server](./live-server-index-html.png)
+
+
+- 127.0.0.1 is the default internal loop IP for localhost.{.fragment}
 
 ---
 
-## Lecture Goals
+### Lecture repository workflow
+
+[lecture repo link](https://github.com/learn-co-curriculum/SENG-LIVE-041023-Phase-1-JS/blob/main/GIT.md)
+
+- Fork
+- Copy SSH url  {.fragment}
+- Go to the directory where you want to download the code {.fragment}
+- `$git clone <SSH url>` onto your local machine {.fragment}
+- The next day, I'm going to add a new folder {.fragment}
+- You would go back to the github repo {.fragment}
+- Click on the `Sync fork` button {.fragment}
+- Click on the `Update branch` button {.fragment}
+- `$git pull origin main` {.fragment}
+
+
+---
+
+### Lecture Goals
 
 - Describe what functions are
 - Regular functions vs arrow functions syntax
@@ -91,14 +113,19 @@ Extension | Description |
 
 ---
 
-## Functions
+
+### Functions
 
 ![functions](./functions.drawio.svg)
 
+- Definition phase (Declaration phase)
+
+- Invocation phase {.fragment}
 
 ---
 
-## Functions
+
+### Functions
 ![functions](./structure-of-a-javascript-function.png)
 
 

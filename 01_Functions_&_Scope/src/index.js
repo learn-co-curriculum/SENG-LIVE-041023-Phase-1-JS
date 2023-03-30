@@ -73,6 +73,67 @@ const inventory = [
 */
 
 // Start here!
+/////////////////////////////////////////////////////
+/////////////    1    ///////////////////////////////
+/////////////////////////////////////////////////////
+// function hello(param1, param2){
+//   return `hello world ${param1} + ${param2}`
+// }
+// hello("arg1", "arg2")
+
+// // -----> in the google developer console
+// hello("1","2")         ////invoking
+// 'hello world 1 + 2'    ////return value
+
+
+
+////////////////////////////////////////////////////
+/////////////   2    ///////////////////////////////
+////////////////////////////////////////////////////
+// function hello(param1, param2){
+//  console.log(`hello world ${param1} + ${param2}`)
+// }
+// hello("arg1", "arg2")
+
+// -----> in the google developer console
+// hello world arg1 + arg2 //hello function being invoked on line 93, console logging line 91.
+// hello("1","2")          ////invoking
+// hello world 1 + 2       //// console logging
+// undefined               //// returning undefined because there was no return statement
+
+
+
+///////////////////////////////////////////////////////
+/////////////   null vs undefined    //////////////////
+///////////////////////////////////////////////////////
+
+//null: it's an empty value. but someone actually assigned it as null.
+//undefined: it's a value that has not been assigned yet.
+
+
+////////////////////////////////////////////////////
+/////////////   3    ///////////////////////////////
+////////////////////////////////////////////////////
+// function hello(param1, param2){
+//  return `hello world ${param1} + ${param2}`
+// }
+// console.log(hello("arg1", "arg2"))
+
+// -----> in the google developer console
+// hello world arg1 + arg2     //hello function is being invoked on line 120, and being console logged. 
+
+
+////////////////////////////////////////////////////
+/////////////   4    ///////////////////////////////
+////////////////////////////////////////////////////
+function hello(param1, param2){
+ return `hello world ${param1} + ${param2}`
+}
+const printHello = hello("arg1", "arg2")
+console.log(printHello)
+
+// -----> in the google developer console
+// hello world arg1 + arg2     //hello function is being invoked on line 132, being saved in a variable then being console logged on the line 133.
 
 
 
@@ -81,6 +142,11 @@ const inventory = [
 
 // ✅ create an arrow function version of the formatPrice function
 
+const formatPrice = (price) => {
+  return `Eloquent JavaScript: A Modern Introduction to Programming by Marjin Haverbeke is on sale for $${price}`
+}
+
+console.log(formatPrice(inventory[0].price))
 
 
 // ✅ create a blurb() function that accepts a book as an argument and logs a message in the following format:
