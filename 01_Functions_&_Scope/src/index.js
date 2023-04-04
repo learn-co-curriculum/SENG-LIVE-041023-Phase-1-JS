@@ -1,3 +1,5 @@
+console.log("hello")
+
 //Data 
 const inventory = [
   {
@@ -136,11 +138,20 @@ console.log(printHello)
 // hello world arg1 + arg2     //hello function is being invoked on line 132, being saved in a variable then being console logged on the line 133.
 
 
+//create a formatPrice(price) function that accepts a price(number) as an argument and returns the price formatted as a String. 
+
+function formatPrice(price){
+}
+
+console.log("formatPrice(10)", formatPrice(10))
+
+// go to browser and point at the console, which is "undefined"
 
 
 // 💡 Arrow functions vs regular functions
 
 // ✅ create an arrow function version of the formatPrice function
+
 
 const formatPrice = (price) => {
   return `Eloquent JavaScript: A Modern Introduction to Programming by Marjin Haverbeke is on sale for $${price}`
