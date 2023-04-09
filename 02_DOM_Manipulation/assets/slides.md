@@ -14,10 +14,12 @@ width: 1400
 
 #### Learning Goals
 
-- Review what the DOM is
-- Explain what CRUD actions are
-- Observe how to do CRUD actions on the DOM
-- Explain how the DOM is able to read code written in JS files
+-Understand what the DOM is and how to traverse it
+- Select single DOM element with .querySelector() and .getElementById()
+- Select multiple DOM elements with .querySelectorAll() and .getElementsByClassName()
+- Add context with .textContent
+- Create elements with .createElement
+- Append elements to the DOM with .appendChild() and .append()
 
 ---
 
