@@ -1,5 +1,3 @@
-console.log("hello")
-
 //Data 
 const inventory = [
   {
@@ -64,6 +62,15 @@ const inventory = [
     reviews: [{userID: 99, content:'One of the most helpful books for taking on the tech interview'}, {userID: 20, content: 'Great but I just wish it was in JavaScript instead of Java' }],
     inventory: 20,
     imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/41oYsXjLvZL._SY344_BO1,204,203,200_.jpg'
+  },
+  {
+    id: 8,
+    title: 'Cracking the Coding Interview',
+    author: 'Gayle Laakmann McDowell',
+    price: 499.95,
+    reviews: [{userID: 99, content:'One of the most helpful books for taking on the tech interview'}, {userID: 20, content: 'Great but I just wish it was in JavaScript instead of Java' }],
+    inventory: 20,
+    imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/41oYsXjLvZL._SY344_BO1,204,203,200_.jpg'
   }
 ]
 
@@ -75,6 +82,11 @@ const inventory = [
 */
 
 // Start here!
+
+/////////////////////////////////////////////////////
+/////////////    function hello(){}   ///////////////
+/////////////////////////////////////////////////////
+
 /////////////////////////////////////////////////////
 /////////////    1    ///////////////////////////////
 /////////////////////////////////////////////////////
@@ -97,7 +109,7 @@ const inventory = [
 // }
 // hello("arg1", "arg2")
 
-// -----> in the google developer console
+// //-----> in the google developer console
 // hello world arg1 + arg2 //hello function being invoked on line 93, console logging line 91.
 // hello("1","2")          ////invoking
 // hello world 1 + 2       //// console logging
@@ -121,61 +133,186 @@ const inventory = [
 // }
 // console.log(hello("arg1", "arg2"))
 
-// -----> in the google developer console
+// //-----> in the google developer console
 // hello world arg1 + arg2     //hello function is being invoked on line 120, and being console logged. 
 
 
 ////////////////////////////////////////////////////
 /////////////   4    ///////////////////////////////
 ////////////////////////////////////////////////////
-function hello(param1, param2){
- return `hello world ${param1} + ${param2}`
-}
-const printHello = hello("arg1", "arg2")
-console.log(printHello)
+// function hello(param1, param2){
+//  return `hello world ${param1} + ${param2}`
+// }
+// const printHello = hello("arg1", "arg2")
+// console.log(printHello)
 
-// -----> in the google developer console
+// //-----> in the google developer console
 // hello world arg1 + arg2     //hello function is being invoked on line 132, being saved in a variable then being console logged on the line 133.
 
 
-//create a formatPrice(price) function that accepts a price(number) as an argument and returns the price formatted as a String. 
+/////////////////////////////////////////////////////
+/////////////    formatPrice(price)    ///////////////////////////////
+/////////////////////////////////////////////////////
 
-function formatPrice(price){
-}
+//create a formatPrice(price) function that accepts a price(number) as an argument and returns the price formatted as a String.
+//formatPrice(price) => $10.00
 
-console.log("formatPrice(10)", formatPrice(10))
+/////////////////////////////////////////////////////
+/////////////    1    ///////////////////////////////
+/////////////////////////////////////////////////////
 
-// go to browser and point at the console, which is "undefined"
+// function formatPrice(price){
+// }
+// console.log("formatPrice(10)", formatPrice(10)) 
+// //formatPrice(10) undefined
+
+// 1. invoke the function
+// 2. console.log the function so we can see it
+// 3. go to browser and point at the console, which is "undefined"
+// 4. Ask yourself which datatype you are working with. 
+// 5. go to MDN number
+// 6. We will see all the built in JS data types, one of them is number.
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+// 7. (Number.MAX_VALUE, ...) properties: values, stored on the object.
+// 8. (Number.parseFloat(), ...) methods: functions that are stored on the object
+// 9. (Number.prototype.toFixed()) .prototype: means, if you work with the actual number, then you can call the `.toFixed()` method. It's callable on any examples.
+
+/////////////////////////////////////////////////////
+/////////////    2    ///////////////////////////////
+/////////////////////////////////////////////////////
+
+// function formatPrice(price){
+//   return Number.parseFloat(price).toFixed(2)
+// }
+// console.log("formatPrice(10)", formatPrice(10))
+// //formatPrice(10) 10.00
 
 
-// 💡 Arrow functions vs regular functions
+/////////////////////////////////////////////////////
+/////////////    3    ///////////////////////////////
+/////////////////////////////////////////////////////
 
-// ✅ create an arrow function version of the formatPrice function
+// 1. string interpolation with backticks
+
+// function formatPrice(price){
+//   return `$${Number.parseFloat(price).toFixed(2)}`
+// }
+// console.log("formatPrice(10)", formatPrice(10))
+// //formatPrice(10) $10.00
 
 
-const formatPrice = (price) => {
-  return `Eloquent JavaScript: A Modern Introduction to Programming by Marjin Haverbeke is on sale for $${price}`
-}
+/////////////////////////////////////////////////////
+/////////////   4    ///////////////////////////////
+/////////////////////////////////////////////////////
 
-console.log(formatPrice(inventory[0].price))
+// //1. concatenation, adding a string 
+// function formatPrice(price){
+//   return "$" + Number.parseFloat(price).toFixed(2)
+// }
+// console.log("formatPrice(10)", formatPrice(10))
+// //formatPrice(10) $10.00
+
 
 
 // ✅ create a blurb() function that accepts a book as an argument and logs a message in the following format:
 // 'Eloquent JavaScript: A Modern Introduction to Programming by Marjin Haverbeke is on sale for $10.00'
 
+// const book = inventory[0]
 
+// function blurb(book){
+//   const title = book.title
+//   const author = book.author
+//   const price = `$${book.price}.00`
+//   return `${title} by ${author} is on sale for ${price}`
+// }
+
+// console.log(blurb(inventory[0]))
+
+
+/////////////////////////////////////////////////////
+/////////////  SCOPE   ///////////////////////////////
+/////////////////////////////////////////////////////
 
 // 💡 Difference between Block scope, Function scope, and Global scope
 
 // ✅ create a variable `highestPricedBook`
+// let highestPricedBook ;
+
+
+// // ✅ create a function `findHighestPricedBook` that finds that book and returns it
+// function findHighestPricedBook(inventoryParam) {
+//   highestPricedBook = inventoryParam[0]  
+//   for (let i = 1; i < inventoryParam.length; i++) {
+//     const highestPrice = highestPricedBook.price
+//     const currentBook = inventoryParam[i]
+//       if (currentBook.price > highestPrice) {
+//         highestPricedBook = currentBook; //re-assign highestPricedBook to currentBook
+//       }
+//     }
+//   return highestPricedBook;
+// }
+// console.log("highestPricedBook---A", highestPricedBook)
+// findHighestPricedBook(inventory)
+// console.log("highestPricedBook---B", highestPricedBook)
+
+
+/////////////////////////////////////////////////////
+/////////////  💡 Arrow functions vs regular functions    ///////////////////////////////
+/////////////////////////////////////////////////////
+
+//function declaration:
+// function sayHello(str){
+//   return `function declaration ${str}`
+// }
+// console.log(sayHello("Lena"))
+
+
+// //arrow function:
+
+//const sayHello = (str) => str //implied return so no need return keyword
+
+//  const sayHello = (str) => { 
+//   return str 
+// } //explicit return
+// console.log(sayHello("Lena"))
+
+
+// //function expression:
+// const sayHello = function (str){
+//   return `function expression ${str}`
+// }
+
+// console.log(sayHello("studying makes me feel good"))
+
+// let sayHi = () => alert("Hello!");
+// sayHi()
+
+
+// // Function Expression
+
+// let sum = function(a, b) {
+//   return a + b;
+// };
+// console.log("hello", result)
+// const result = sum(1, 3) // calling the function
 
 
 
-// ✅ create a function `findHighestPricedBook` that finds that book and returns it
+// hoisting 
+//JS will bring function(with keyword, not the arrow function) to the top of the scope.
+// console.log(sayHello("Lena"))
+
+// function sayHello(str){
+//   return `function declaration ${str}`
+// }
+
+// console.log(sayHello("Lena"))
+
+// const sayHello = (str) => `hello ${str}`
 
 
 
-// After Break
+
 
 // ✅ Create a function called `log` that takes a function and its argument as arguments
 // and logs a message explaining the name of the function, the argument passed and 
@@ -187,14 +324,52 @@ console.log(formatPrice(inventory[0].price))
 
 // ✅ Create an array of the prices of all of the books
 
+////for loop
+// let result = []
+// for(let i = 0 ; i < inventory.length; i++){
+//   const price = inventory[i].price;
+//   result.push(price)
+// }
+// console.log(result)
+
+
+
+
+////.forEach()
+////////////////anonymous////////
+// const prices = inventory.forEach(book => book.price)
+// console.log(prices) //undefined
+
+// const prices = inventory.forEach((book, b, c)  => {
+//   console.log(book.price, b, "c")})
+
+
+////////////////inner/outer forEach////////
+// function inner(book){
+//   console.log(book.price)
+// }
+// const prices = inventory.forEach(inner)
+
+
+
+
+/////.map()
+// const prices = inventory.map(book => book.price)
+// console.log(prices) //[10, 45.75, 36, 25.5, 6, 24, 49.95, 499.95]
+function callback(book){
+  return book.price
+}
+const prices = inventory.map(callback)
+
+
+console.log(prices)//[10, 45.75, 36, 25.5, 6, 24, 49.95, 499.95]
+
 
 
 // ✅ Create an array of simplified book objects
 
 
 
-// ✅ Create an array of strings from the inventory in the following format:
-// 'Eloquent JavaScript: A Modern Introduction to Programming by Marjin Haverbeke is on sale for $10.00'
-
 
 // 💡 When do I use forEach vs map?
+

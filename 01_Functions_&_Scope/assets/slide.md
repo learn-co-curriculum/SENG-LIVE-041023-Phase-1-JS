@@ -132,16 +132,38 @@ Extension | Description |
 ---
 
 
+
+
+<div style="font-size: 0.75em">
+
+### Let's Code!
+
+Function | Parameters | Behavior
+---------|----------|---------
+ helloWorld | none | returns "Hello, world!"
+ formatPrice | price (float) | returns the price like so: "$2.99" 
+ blurb | book (obj) | returns a string representation of the book with title author and price
+
+</div>
+
+---
+
+
 ### () => {} vs function() {}
 
 ![regular to arrow function conversion](https://res.cloudinary.com/dlzuobe8h/image/upload/v1670868682/phase1/reg-to-arrow-function_bqrtqj.gif)
 
 - syntax {.fragment}
-- simplified vs fully featured {.fragment}
-- interchangeable for now (hoisting! 😅) {.fragment}
-- read more about [differences](https://dmitripavlutin.com/differences-between-arrow-and-regular-functions/) (or feel free to bookmark for later) {.fragment}
 
-![arrow function to reegular function conversion](https://res.cloudinary.com/dlzuobe8h/image/upload/v1670868681/phase1/arrow-to-reg-function_snfnkx.gif)
+- simplified vs fully featured {.fragment}
+
+- implicit return vs explicit return ["click"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions#function_body) {.fragment}
+
+- interchangeable for now (hoisting! 😅) {.fragment}
+
+- read more about ["click--> differences"](https://dmitripavlutin.com/differences-between-arrow-and-regular-functions/) (or feel free to bookmark for later) {.fragment}
+
+![arrow function to regular function conversion](https://res.cloudinary.com/dlzuobe8h/image/upload/v1670868681/phase1/arrow-to-reg-function_snfnkx.gif)
 
 ---
 
@@ -167,17 +189,10 @@ Extension | Description |
 
 ---
 
-<div style="font-size: 0.75em">
+### Callbacks and HOF
 
-### Let's Code!
+![Callbacks pt2](./call-back-hof.png)
 
-Function | Parameters | Behavior
----------|----------|---------
- helloWorld | none | returns "Hello, world!"
- formatPrice | price (float) | returns the price like so: "$2.99" 
- blurb | book (obj) | returns a string representation of the book with title author and price
-
-</div>
 
 ---
 
@@ -186,6 +201,8 @@ Function | Parameters | Behavior
 ![Callbacks pt2](./callbacks-pt-2.drawio.svg)
 
 ---
+
+
 
 <div style="font-size: 0.75em">
 
