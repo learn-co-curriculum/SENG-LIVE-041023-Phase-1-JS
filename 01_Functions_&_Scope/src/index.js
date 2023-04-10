@@ -74,12 +74,28 @@ const inventory = [
 
 // Start here!
 
+// function runIceCreamMachine(param1, param2){
+//   return ` ${param1}, ${param2} ice cream`
+// }
+
+// runIceCreamMachine("arg1", "arg2")//invocation using argument
 
 
 
-// 💡 Arrow functions vs regular functions
+//create a formatPrice(price) function that accepts a price(number) as an argument and returns the price formatted as a string
 
-// ✅ create an arrow function version of the formatPrice function
+//formatPrice(10) => $10.00
+
+// function formatPrice(price){ //number
+//   //return "$" + Number.parseFloat(price).toFixed(2)
+//   //return  "$" + Number.parseFloat(`${price}`).toFixed(2)
+//   return `hello this will be this price $${Number.parseFloat(price).toFixed(2)}`
+// }
+
+// console.log(formatPrice(10.34))
+
+
+
 
 
 
@@ -87,6 +103,41 @@ const inventory = [
 // 'Eloquent JavaScript: A Modern Introduction to Programming by Marjin Haverbeke is on sale for $10.00'
 
 
+const book = inventory[2]
+
+
+function blurb(book){
+  console.log(book.author)
+  const title = book.title
+  const author = book.author
+  const price = `$${book.price}.00`
+  return `${title} by ${author} is on sale for ${price}`
+}
+
+console.log(blurb(book))
+
+
+
+// const arr1 = [1, 2, 3, {}, "str", {
+//   keyname: "value",
+//   id: 1,
+//   title: 'Eloquent JavaScript: A Modern Introduction to Programming',
+//   author: 'Marjin Haverbeke',
+//   price: 10.00,
+//   reviews: [{userID: 1, content:'Good book, but not great for new coders'}],
+//   inventory: 10,
+//   imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg'
+// }]
+
+// console.log(arr1)
+
+
+
+
+
+// 💡 Arrow functions vs regular functions
+
+// ✅ create an arrow function version of the formatPrice function
 
 // 💡 Difference between Block scope, Function scope, and Global scope
 

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>VSCode Reveal intro</title>
+  <title>P1L1 - Functions &amp; Scope slides</title>
 
   <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
   <meta name="author" content="Hakim El Hattab">
@@ -81,10 +81,10 @@
     
         <section >
             
-            <h4>Guidelines</h4>
+            <h3>Guidelines</h3>
 <div style="display: flex; flex-direction: row">
   <div style="width: 30%">
-    <div style='position:relative; padding-bottom:calc(75.00% + 44px)'><iframe src='https://gfycat.com/ifr/SafeGloriousIslandcanary' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div><p> <a href="https://gfycat.com/safegloriousislandcanary-international-man-of-mystery-austin-powers">via Gfycat</a></p>
+    <div style='position:relative; padding-bottom:calc(75.00% + 44px)'><iframe src='https://gfycat.com/ifr/SafeGloriousIslandcanary' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div><p> <a href="https://gfycat.com/safegloriousislandcanary-international-man-of-mystery-austin-powers"></a></p>
   </div>
   <div style="width: 70%">
 <ul>
@@ -105,10 +105,10 @@
     
         <section >
             
-            <h4>Coding Along (not required!)</h4>
+            <h3>Coding Along (not required!)</h3>
 <div style="display: flex; flex-direction: row">
   <div style="width: 30%">
-    <iframe src="https://giphy.com/embed/VTc0g9IKEpLAk" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/funny-everyone-VTc0g9IKEpLAk">via GIPHY</a></p>
+    <iframe src="https://giphy.com/embed/VTc0g9IKEpLAk" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/funny-everyone-VTc0g9IKEpLAk"></a></p>
   </div>
   <div style="width: 70%">
 <ul>
@@ -146,7 +146,7 @@
 </tr>
 <tr>
 <td><a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live Server</a></td>
-<td>for opening a webpage in the browser that will reload when the code is saved</td>
+<td>for opening a webpage in the browser that will reload when the code is saved.</td>
 </tr>
 <tr>
 <td><a href="https://marketplace.visualstudio.com/items?itemName=evilz.vscode-reveal">vscode-reveal</a></td>
@@ -167,7 +167,43 @@
     
         <section >
             
-            <h2>Lecture Goals</h2>
+            <h3>Live Server</h3>
+<p><img src="./live-server-index-html.png" alt="live-server"></p>
+<ul>
+<li class="fragment">127.0.0.1 is the default internal loop IP for localhost.</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>Lecture repository workflow</h3>
+<p><a href="https://github.com/learn-co-curriculum/SENG-LIVE-041023-Phase-1-JS/blob/main/GIT.md">lecture repo link</a></p>
+<ul>
+<li>Fork</li>
+<li class="fragment">Copy SSH url </li>
+<li class="fragment">Go to the directory where you want to download the code</li>
+<li class="fragment"><code>$git clone &lt;SSH url&gt;</code> onto your local machine</li>
+<li class="fragment">The next day, I’m going to add a new folder</li>
+<li class="fragment">You would go back to the github repo</li>
+<li class="fragment">Click on the <code>Sync fork</code> button</li>
+<li class="fragment">Click on the <code>Update branch</code> button</li>
+<li class="fragment"><code>$git pull origin main</code></li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>Lecture Goals</h3>
 <ul>
 <li>Describe what functions are</li>
 <li>Regular functions vs arrow functions syntax</li>
@@ -191,8 +227,27 @@
     
         <section >
             
-            <h2>Functions</h2>
+            <h3>Functions</h3>
 <p><img src="./functions.drawio.svg" alt="functions"></p>
+<ul>
+<li>
+<p>Definition phase (Declaration phase)</p>
+</li>
+<li class="fragment">
+<p>Invocation phase</p>
+</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>Functions</h3>
+<p><img src="./structure-of-a-javascript-function.png" alt="functions"></p>
 
             </section>
     
@@ -224,9 +279,9 @@
 <td>returns the price like so: “$2.99”</td>
 </tr>
 <tr>
-<td>titleAndAuthor</td>
-<td>book (object)</td>
-<td>returns a string containing both the title and author of the book</td>
+<td>blurb</td>
+<td>book (obj)</td>
+<td>returns a string representation of the book with title author and price</td>
 </tr>
 </tbody>
 </table>
@@ -240,12 +295,25 @@
         <section >
             
             <h3>() =&gt; {} vs function() {}</h3>
+<p><img src="https://res.cloudinary.com/dlzuobe8h/image/upload/v1670868682/phase1/reg-to-arrow-function_bqrtqj.gif" alt="regular to arrow function conversion"></p>
 <ul>
-<li class="fragment">syntax</li>
-<li class="fragment">simplified vs fully featured</li>
-<li class="fragment">interchangeable for now (hoisting! 😅)</li>
-<li class="fragment">read more about <a href="https://dmitripavlutin.com/differences-between-arrow-and-regular-functions/">differences</a> (or feel free to bookmark for later)</li>
+<li class="fragment">
+<p>syntax</p>
+</li>
+<li class="fragment">
+<p>simplified vs fully featured</p>
+</li>
+<li class="fragment">
+<p>implicit return vs explicit return <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions#function_body">“click”</a></p>
+</li>
+<li class="fragment">
+<p>interchangeable for now (hoisting! 😅)</p>
+</li>
+<li class="fragment">
+<p>read more about <a href="https://dmitripavlutin.com/differences-between-arrow-and-regular-functions/">“click–&gt; differences”</a> (or feel free to bookmark for later)</p>
+</li>
 </ul>
+<p><img src="https://res.cloudinary.com/dlzuobe8h/image/upload/v1670868681/phase1/arrow-to-reg-function_snfnkx.gif" alt="arrow function to regular function conversion"></p>
 
             </section>
     
@@ -258,6 +326,45 @@
             <h4>Scope &amp; The Scope Chain</h4>
 <p><img src="https://res.cloudinary.com/dlzuobe8h/image/upload/v1665447423/1_S9gu5XK8LBTSVddsGdBtGg_kq2mnh.png" alt="Scope and the Scope Chain"></p>
 <p><a href="https://medium.com/joonsikyang/scope-and-the-scope-chain-27216a853a4e">Awesome Blog post on Scope and the Scope Chain</a></p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>Callbacks and HOF</h3>
+<p><img src="./callbacks-pt-1.drawio.svg" alt="Callbacks pt1"></p>
+<div style="font-size: 0.75em">
+<h4>Higher Order Functions</h4>
+<ul>
+<li>accept a function as a parameter</li>
+<li>(and/or) return a function</li>
+</ul>
+</div>
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>Callbacks and HOF</h3>
+<p><img src="./call-back-hof.png" alt="Callbacks pt2"></p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>Callbacks and Iteration</h3>
+<p><img src="./callbacks-pt-2.drawio.svg" alt="Callbacks pt2"></p>
 
             </section>
     
