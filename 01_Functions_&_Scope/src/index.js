@@ -103,18 +103,18 @@ const inventory = [
 // 'Eloquent JavaScript: A Modern Introduction to Programming by Marjin Haverbeke is on sale for $10.00'
 
 
-const book = inventory[2]
+// const book = inventory[2]
 
 
-function blurb(book){
-  console.log(book.author)
-  const title = book.title
-  const author = book.author
-  const price = `$${book.price}.00`
-  return `${title} by ${author} is on sale for ${price}`
-}
+// function blurb(book){
+//   console.log(book.author)
+//   const title = book.title
+//   const author = book.author
+//   const price = `$${book.price}.00`
+//   return `${title} by ${author} is on sale for ${price}`
+// }
 
-console.log(blurb(book))
+// console.log(blurb(book))
 
 
 
@@ -132,12 +132,108 @@ console.log(blurb(book))
 // console.log(arr1)
 
 
+//let highestPricedBook; //declaring a var
 
+//console.log(highestPricedBook)
 
+// function findHighestPricedBook(inventoryParam){
+//   let highestPricedBook = inventoryParam[0] //assigning the var
+//   for (let i=1; i < inventoryParam.length; i++){
+//     const highestPrice = highestPricedBook.price
+//     console.log(highestPrice)
+//     const currentBook = inventoryParam[i]
+//     console.log(currentBook)
+//     if(currentBook.price > highestPrice){
+//       highestPricedBook = currentBook; //re-assigned highest priced book with the current book
+//     }
+//   }
+//   return highestPricedBook
+// }
+
+// console.log(findHighestPricedBook(inventory))
 
 // 💡 Arrow functions vs regular functions
 
+//function declaration
+// function sum (a, b){
+//   return a + b
+// }
+
+
+//arrow function 
+// const sum = (a, b) => a + b //implicit return
+// const result = sum(3, 7) 
+// console.log(result)
+
+
+// const sayHello = str => { //explicit return 
+//   return str
+// }
+// console.log(sayHello("hello"))
+
+// let displayA = a => alert(`this is ${a}`)
+// console.log(displayA("A"))
+
+// let sayHi = () => alert("hello!")
+// console.log(sayHi())
+
+
+//function expression
+// let sum = function (a, b){
+//   return a + b
+// }
+
+// const result = sum(1, 3)
+// console.log(result)
+
+
+// let result = []
+// for(let i = 0; i < inventory.length; i++){
+//   const price = inventory[i].price
+//   result.push(price)
+// }
+// console.log(result)
+
+
+///// .forEach() /////////////////////////////
+// 1 .forEach() with CB arrow function 
+// const prices = inventory.forEach(book => console.log(book.price))
+
+// // 2 .forEach() with CB function declaration written inside of the outer function
+// const prices = inventory.forEach(function inner(book){
+//   console.log(book.price)
+// })
+
+// // 3 .forEach() with CB inner function declaration as call back function 
+// // inner function (CB)
+// function inner(book){
+//   console.log(book.price)
+// }
+// //outer function (HoF)
+// const prices = inventory.forEach(inner)
+// console.log(prices)
+
+
+
+/////.map()/////////////////////////////
+//1
+// const prices = inventory.map(book => book.price)
+// console.log(prices)
+
+//2
+// const prices = inventory.map(function callback(book){
+//   return book.price
+// })
+
+//3
+// function callback(book){
+//   return book.price
+// }
+// const prices = inventory.map(callback)
+// console.log(prices)
+
 // ✅ create an arrow function version of the formatPrice function
+
 
 // 💡 Difference between Block scope, Function scope, and Global scope
 
@@ -147,9 +243,6 @@ console.log(blurb(book))
 
 // ✅ create a function `findHighestPricedBook` that finds that book and returns it
 
-
-
-// After Break
 
 // ✅ Create a function called `log` that takes a function and its argument as arguments
 // and logs a message explaining the name of the function, the argument passed and 
