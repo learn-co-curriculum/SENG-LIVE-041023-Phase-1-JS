@@ -14,7 +14,7 @@ width: 1400
 
 #### Learning Goals
 
--Understand what the DOM is and how to traverse it
+- Understand what the DOM is and how to traverse it
 - Select single DOM element with .querySelector() and .getElementById()
 - Select multiple DOM elements with .querySelectorAll() and .getElementsByClassName()
 - Add context with .textContent

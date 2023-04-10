@@ -1,13 +1,15 @@
 //BookStore has been moved to data.js 
 console.log(bookStore);
 
+console.log(document.querySelector('div'))
+
 function formatPrice(price) {
   return '$' + Number.parseFloat(price).toFixed(2);
 }
 
 // create a function called renderBook(book)
 // it will take a book object as an argument
-// and create the html struture for rendering 
+// and create the html structure for rendering 
 // that book and insert it into our webpage!
 
 // function renderBook(book) {
