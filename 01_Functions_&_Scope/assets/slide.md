@@ -148,6 +148,14 @@ Function | Parameters | Behavior
 
 ---
 
+#### Scope & The Scope Chain
+![Scope and the Scope Chain](https://res.cloudinary.com/dlzuobe8h/image/upload/v1665447423/1_S9gu5XK8LBTSVddsGdBtGg_kq2mnh.png)
+
+[Awesome Blog post on Scope and the Scope Chain](https://medium.com/joonsikyang/scope-and-the-scope-chain-27216a853a4e)
+
+---
+
+
 
 ### () => {} vs function() {}
 
@@ -165,14 +173,7 @@ Function | Parameters | Behavior
 
 ![arrow function to regular function conversion](https://res.cloudinary.com/dlzuobe8h/image/upload/v1670868681/phase1/arrow-to-reg-function_snfnkx.gif)
 
----
-
-#### Scope & The Scope Chain
-![Scope and the Scope Chain](https://res.cloudinary.com/dlzuobe8h/image/upload/v1665447423/1_S9gu5XK8LBTSVddsGdBtGg_kq2mnh.png)
-
-[Awesome Blog post on Scope and the Scope Chain](https://medium.com/joonsikyang/scope-and-the-scope-chain-27216a853a4e)
-
----
+----
 
 ### Callbacks and HOF
 
