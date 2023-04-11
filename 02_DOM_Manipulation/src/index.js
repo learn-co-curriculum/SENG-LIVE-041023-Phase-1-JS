@@ -43,10 +43,67 @@ function renderFooter(){
     //price
     //imageUrl
 
-    bookStore.inventory.forEach(book => {
+    // bookStore.inventory.forEach(book => {
+    //   //console.log(book)
 
-    })
+    //   //1. Create DOM elements
+    //       //1 li element => container
+    //       //1 h3 element, 2 p elements, 1 img element, 1 btn element
+    //       const parentList = document.querySelector('#book-list')
+    //       const bookCard = document.createElement('li')
+
+    //       const title = document.createElement('h3')
+    //       const author = document.createElement('p')
+    //       const price = document.createElement('p')
+    //       const img = document.createElement('img')
+    //       const button = document.createElement('button')
+
+
+    //   // 2. Populate DOM elements with Appropriate context
+    //       title.textContent = book.title
+    //       author.textContent = book.author
+    //       price.textContent = book.price
+    //       img.src = book.imageUrl
+    //       button.textContent = 'Delete'
+
+    //       bookCard.className = 'list-li'
+
+
+    //   // 3. Wrap / Append these to One another
+    //     bookCard.append(title, author, price, img, button)
+    //     parentList.append(bookCard)
+    // })
+
+    const renderCard = book => {
+          const parentList = document.querySelector('#book-list')
+          const bookCard = document.createElement('li')
+
+          const title = document.createElement('h3')
+          const author = document.createElement('p')
+          const price = document.createElement('p')
+          const img = document.createElement('img')
+          const button = document.createElement('button')
+
+
+      // 2. Populate DOM elements with Appropriate context
+          title.textContent = book.title
+          author.textContent = book.author
+          price.textContent = book.price
+          img.src = book.imageUrl
+          button.textContent = 'Delete'
+
+          bookCard.className = 'list-li'
+
+
+      // 3. Wrap / Append these to One another
+        bookCard.append(title, author, price, img, button)
+        parentList.append(bookCard)
+    }
 
 
     renderHeader()
     renderFooter()
+//    bookStore.inventory.forEach(renderCard) //renderCard as a callback function
+    //bookStore.inventory.forEach(renderCard()) //we are not invoking the callback function now bc we don't have access to the title.
+
+    bookStore.inventory.forEach(book => renderCard(book))
