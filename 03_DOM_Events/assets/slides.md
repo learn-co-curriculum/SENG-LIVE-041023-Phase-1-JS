@@ -171,6 +171,21 @@ otherForm.addEventListener('submit', (e) => {
 
 ---
 
+The most common event types and event names:
+
+- Mouse Events: click, dblclick, mousedown, mouseup, contextmenu, mouseout, mousewheel, mouseover
+
+- Touch Events: touchstart, touchend, touchmove, touchcancel
+
+- Keyboard Events: keydown, keyup, keypress
+
+- Form Events: focus, blur, change, submit
+Window Events: resize, scroll, load, unload, hashchange
+
+
+---
+
+
 ## Let's Code!
 
 - Users should be able to delete books by clicking the delete button at the bottom of the book card

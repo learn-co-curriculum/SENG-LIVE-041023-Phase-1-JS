@@ -1,3 +1,15 @@
+// const bodyElement = document.querySelector('body')
+
+// function myFunction(){
+//     console.log("hello")
+// }
+
+// bodyElement.addEventListener("click", myFunction()) //doesn't work
+//bodyElement.addEventListener("click", () => myFunction())
+// bodyElement.addEventListener("click", myFunction)
+
+
+//function invocation
 renderHeader()
 renderFooter()
 bookStore.inventory.forEach(renderBook)
@@ -52,7 +64,8 @@ function renderBook(book) {
 
     btn.textContent = 'Delete';
 
+    btn.addEventListener('click', () => li.remove())
+
     li.append(h3,pAuthor,pPrice,img,btn);
     document.querySelector('#book-list').append(li);
 }
-
