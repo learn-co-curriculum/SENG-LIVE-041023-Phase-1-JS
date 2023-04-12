@@ -69,3 +69,42 @@ function renderBook(book) {
     li.append(h3,pAuthor,pPrice,img,btn);
     document.querySelector('#book-list').append(li);
 }
+
+const form = document.querySelector("form")
+//form.addEventListener("submit", handleForm)
+form.addEventListener("submit", (event) => handleForm(event))
+
+//handle form submission
+function handleForm(event){
+    event.preventDefault()
+
+    // {
+    //     id:1,
+    //     title: 'Eloquent JavaScript: A Modern Introduction to Programming',
+    //     author: 'Marjin Haverbeke',
+    //     price: 10.00,
+    //     reviews: [{userID: 1, content:'Good book, but not great for new coders'}],
+    //     inventory: 10,
+    //     imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg',
+    //   }
+
+    // console.log(event.target.title.value)
+    // console.log(event.target.author.value)
+    // console.log(event.target.price.value)
+    // console.log(event.target.imageUrl.value)
+    // console.log(event.target.inventory.value)
+
+    const newBook = {
+        id: bookStore.inventory.length + 1,
+        title : event.target.title.value,
+        author: event.target.author.value,
+        price: event.target.price.value,
+        reviews: [],
+        imageUrl: event.target.imageUrl.value, 
+        inventory: event.target.inventory.value
+    }
+
+    bookStore.inventory.push(newBook)
+    renderBook(newBook)
+
+}
