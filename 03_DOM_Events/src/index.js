@@ -55,8 +55,7 @@ function renderBook(book) {
     btn.textContent = 'Delete';
 
     //event target // method // event type //callback func 
-
-    btn.addEventListener("click", (event) => console.log(event.target.parentNode.remove()))
+    btn.addEventListener("click", (event) => event.target.parentNode.remove())
 
 
     //btn.addEventListener("click", () => li.remove())
@@ -64,3 +63,33 @@ function renderBook(book) {
     li.append(h3,pAuthor,pPrice,img,btn);
     document.querySelector('#book-list').append(li);
 }
+
+//target dom element // method // event type //callback func 
+const form = document.querySelector("form")
+//form.addEventListener("submit", handleForm)
+form.addEventListener("submit", (e) => handleForm(e))
+
+
+function handleForm(event){ //callback func //innerfunc
+    event.preventDefault() //prevents the default form submit behavior
+
+    // title: event.target["form-title"].value
+    const newCard = {
+        id: bookStore.inventory.length + 1,
+        title: event.target.title.value,
+        author: event.target.author.value,
+        price: event.target.price.value,
+        reviews: [],
+        imageUrl: event.target.imageUrl.value,
+        inventory: event.target.inventory.value
+    }
+
+    //add a new book to inventory
+    bookStore.inventory.push(newCard)
+
+    //render new book card on the page
+    renderBook(newCard) //invoking the function //argument= newcard 
+    
+}
+
+
