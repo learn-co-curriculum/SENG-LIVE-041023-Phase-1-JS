@@ -1,12 +1,15 @@
-// const bodyElement = document.querySelector('body')
 
-// function myFunction(){
+// const bodyElement = document.querySelector('body'); //select the whole body 
+
+// function myFunction(){ //inner function/callback function
 //     console.log("hello")
 // }
 
-// bodyElement.addEventListener("click", myFunction()) //doesn't work
-//bodyElement.addEventListener("click", () => myFunction())
-// bodyElement.addEventListener("click", myFunction)
+// bodyElement.addEventListener("click", () => myFunction())
+// //event target // method // event type //callback func 
+
+// //bodyElement.addEventListener("click", myFunction) //short cut 
+// //bodyElement.addEventListener("click", myFunction()) //=> doesn't work
 
 
 //function invocation
@@ -14,6 +17,7 @@ renderHeader()
 renderFooter()
 bookStore.inventory.forEach(renderBook)
 
+// format price
 function priceFormatter(price) {
   let formattedPrice = Number(price).toFixed(2);
   return `$${formattedPrice}`;
@@ -31,40 +35,31 @@ function renderFooter(){
     footerDivs[2].textContent = bookStore.hours;
 }
 
-// function: renderBook(book)
-// --------------------------
-// accepts a book object as an argument and creates
-// an li something like this:
-// <li class="list-li">
-//   <h3>Eloquent JavaScript</h3>
-//   <p>Marjin Haverbeke</p>
-//   <p>$10.00</p>
-//   <img src="https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg" alt="Eloquent JavaScript cover"/>
-// </li>
 // appends the li to the ul#book-list in the DOM
 function renderBook(book) {
     
     const li = document.createElement('li');
-    li.className = 'list-li';
-    
     const h3 = document.createElement('h3');
-    h3.textContent = book.title;
-
     const pAuthor = document.createElement('p');
-    pAuthor.textContent = book.author;
-    
     const pPrice = document.createElement('p');
-    pPrice.textContent = `$${book.price}`;
-    
     const img = document.createElement('img');
-    img.src = book.imageUrl;
-    img.alt = `${book.title} cover`;
-;
     const btn = document.createElement('button');
 
+    li.className = 'list-li';
+    
+    h3.textContent = book.title;
+    pAuthor.textContent = book.author;
+    pPrice.textContent = `$${book.price}`;
+    img.src = book.imageUrl;
+    img.alt = `${book.title} cover`;
     btn.textContent = 'Delete';
 
-    btn.addEventListener('click', () => li.remove())
+    //event target // method // event type //callback func 
+
+    btn.addEventListener("click", (event) => console.log(event.target.parentNode.remove()))
+
+
+    //btn.addEventListener("click", () => li.remove())
 
     li.append(h3,pAuthor,pPrice,img,btn);
     document.querySelector('#book-list').append(li);
