@@ -1,21 +1,68 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const p = Promise.reject('CONTENT')
-
-    p.then(value => {
-        console.log(`YESSSS SUCCESS! ${value}` )
-    }).catch(err => {
-        console.error(`NO ERROR :-( ${err})`)
-    })
-
     //3 states of promise: (box)
         //statuses: pending, fulfilled, rejected
         //contents: what's returned / passed on once the promise is resolved 
 
-    fetch("http://localhost:3000/stores/")
-        .then(resp => resp.json()) //this case it was fulfilled(resolved)
-        .then(data => console.log(data))
-        .catch(err => console.error(err))
+        //Handle GET request
+        function handleRequest(url){
+            return fetch(url)
+            .then(resp => resp.json())
+        }
+
+        //Render Response Data => store 
+        handleRequest("http://localhost:3000/stores/1")
+            .then(store => {
+                renderHeader(store)
+                renderFooter(store)
+                })
+            .catch(console.error)
+
+        //Render Response Data => books
+        handleRequest("http://localhost:3000/books/")
+            .then(books => books.forEach(renderBookCard))
+            .catch(console.error)
+
+        //Render Response Data => stores 
+        handleRequest("http://localhost:3000/stores/")
+            .then(stores => stores.forEach(renderStoreCard))
+            .catch(console.error)
+
+        const storeContainer = document.querySelector("#stores")
+
+        //Render Store Card
+        function renderStoreCard(store){
+            //create necessary elements
+            const storeCard = document.createElement('li')
+            const storeName = document.createElement('h3')
+            const storeLocation = document.createElement('p')
+            const storeHours = document.createElement('p')
+
+            storeCard.className = 'list-li'
+
+            //populate elements with appropriate content
+            console.log(store)
+            storeName.textContent = store.name
+            storeLocation.textContent = store.location
+            storeHours.textContent = store.hours
+
+            //appending to the DOM as necessary 
+            storeCard.append(storeName, storeLocation, storeHours)
+            storeContainer.append(storeCard)
+
+
+            //add event handling behaviors
+            storeCard.addEventListener('click',()=> {
+                console.log("clicked")
+                handleRequest(`http://localhost:3000/stores/${store.id}`)
+                .then((store) => {
+                    renderHeader(store)
+                    renderFooter(store)
+                })
+                .catch(console.error)
+            })
+        }
+
 
     // Render Functions
     // Renders Header
@@ -69,10 +116,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 //Invoking functions
-    renderHeader(bookStore)
-    renderFooter(bookStore)
-    bookStore.inventory.forEach(renderBookCard)
+    //renderHeader(bookStore)
+    //renderFooter(bookStore)
+    //bookStore.inventory.forEach(renderBookCard)
     document.querySelector('#book-form').addEventListener('submit', handleForm)
-
-
 })
