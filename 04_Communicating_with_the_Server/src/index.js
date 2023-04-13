@@ -1,24 +1,89 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // const p = Promise.reject("CONTENT")
-
-    // p.then(value => {
-    //     console.log(`YESSSSS SUCCESS!!! ${value}`)
-    // }).catch(err => {
-    //     console.error(`NO ERROR!!! :-( ${err})`)
-    // })
-
-    //3 statuses: pending, fulfilled, rejected
-    //content : what is bing returned/ passed on once the promise is resolved
-
-    fetch("http://localhost:3000/stores") //endpoint
-        .then(resp => resp.json()) //parsing it from JSON to JS 
-        .then((data) => console.log(data))
-        .catch(err=> console.error(err))
+    // console.log("before fetch")
+    // fetch("http://localhost:3000/stores") //endpoint
+    //     .then(resp => resp.json()) //parsing it from JSON to JS 
+    //     .then((data) => console.log(data))
+    //     .catch(err=> console.error(err))
+    //     //JSON : JS object notation 
+    //     //JSON is not vanilla JS object
 
 
-        //JSON : JS object notation 
-        //JSON is not vanilla JS object
+    // // console.log("after fetch")
+
+    // fetch("http://localhost:3000/stores")
+    //     .then(resp => resp.json()) //promise
+    //     .then((data) => console.log(data)) //rendering the data
+
+
+    //handle GET requests
+    function handleRequest(url){ //promise
+        return fetch(url)
+        .then(resp => resp.json())
+    }
+
+    //render response data => stores
+    // handleRequest("http://localhost:3000/stores/1") //endpoint
+    //     .then(store => {
+    //         renderHeader(store)
+    //         renderFooter(store)
+    //     })
+    //     .catch(console.error)
+
+    //render response data => books
+    // handleRequest("http://localhost:3000/books")
+    //     .then(books => { //array 
+    //                 console.log(books)
+    //                 books.forEach((book) => { //object
+    //                     console.log(book)
+    //                     renderBookCard(book) //takes in an abj as an argument
+    //                 })
+    //             }) 
+
+    //render response data => books
+    handleRequest("http://localhost:3000/books")
+        .then(books => books.forEach(renderBookCard)) 
+
+    //render response data => stores
+    handleRequest("http://localhost:3000/stores/")
+        .then(stores => stores.forEach(renderStoreCard))
+        .catch(err => console.error(err))
+
+
+    const storeContainer = document.querySelector("#stores")
+    //render store card
+    function renderStoreCard(store) {
+        //1 .create necessary elements
+        const storeCard = document.createElement('li')
+        const storeName = document.createElement('h3')
+        const storeLocation = document.createElement('p')
+        const storeHours = document.createElement('p')
+
+
+        //2. populate elements with appropriate content
+        console.log(store)
+        storeName.textContent = store.name
+        storeLocation.textContent = store.location
+        storeHours.textContent = store.hours
+
+        storeCard.className = 'list-li'
+        
+
+        //3. append to the DOM as necessary
+        storeCard.append(storeName, storeLocation, storeHours)
+        storeContainer.append(storeCard)
+
+        //4. add event handling behavior
+
+        storeCard.addEventListener("click", () => {
+            handleRequest(`http://localhost:3000/stores/${store.id}`)
+                .then((store) => {
+                    renderHeader(store)
+                    renderFooter(store)
+                })})
+    }
+
+
 
 // Render Functions
     // Renders Header
@@ -73,9 +138,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //Invoking functions
-    renderHeader(bookStore)
-    renderFooter(bookStore)
-    bookStore.inventory.forEach(renderBookCard)
+    //renderHeader(bookStore) //data.js
+    //renderFooter(bookStore)
+    //bookStore.inventory.forEach(renderBookCard)
     document.querySelector('#book-form').addEventListener('submit', handleForm)
 
 
