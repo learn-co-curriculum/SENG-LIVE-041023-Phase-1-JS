@@ -12,6 +12,10 @@
 
 ## Deliverables 
 
+$npm install -g json-server
+$json-server --watch 04_Communicating_with_the_Server/src/db.json
+
+
 - Demo JSON server
     - Explore JSON-server and fire up the server in the src directory with json-server –watch db.json
 - Demo GET all

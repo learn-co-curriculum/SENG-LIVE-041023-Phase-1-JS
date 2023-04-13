@@ -1,5 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // const p = Promise.reject("CONTENT")
+
+    // p.then(value => {
+    //     console.log(`YESSSSS SUCCESS!!! ${value}`)
+    // }).catch(err => {
+    //     console.error(`NO ERROR!!! :-( ${err})`)
+    // })
+
+    //3 statuses: pending, fulfilled, rejected
+    //content : what is bing returned/ passed on once the promise is resolved
+
+    fetch("http://localhost:3000/stores") //endpoint
+        .then(resp => resp.json()) //parsing it from JSON to JS 
+        .then((data) => console.log(data))
+        .catch(err=> console.error(err))
+
+
+        //JSON : JS object notation 
+        //JSON is not vanilla JS object
+
 // Render Functions
     // Renders Header
     function renderHeader(store){
@@ -50,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         renderBookCard(book)
     }
+
 
 //Invoking functions
     renderHeader(bookStore)
