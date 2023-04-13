@@ -1,6 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-// Render Functions
+    const p = Promise.reject('CONTENT')
+
+    p.then(value => {
+        console.log(`YESSSS SUCCESS! ${value}` )
+    }).catch(err => {
+        console.error(`NO ERROR :-( ${err})`)
+    })
+
+    //3 states of promise: (box)
+        //statuses: pending, fulfilled, rejected
+        //contents: what's returned / passed on once the promise is resolved 
+
+    fetch("http://localhost:3000/stores/")
+        .then(resp => resp.json()) //this case it was fulfilled(resolved)
+        .then(data => console.log(data))
+        .catch(err => console.error(err))
+
+    // Render Functions
     // Renders Header
     function renderHeader(store){
         document.querySelector('h1').textContent = store.name
