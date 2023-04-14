@@ -47,3 +47,5 @@ fetch(url, {
     body:JSON.stringify(formData)
 })
 ```
+
+$json-server --watch src/db.json
