@@ -17,6 +17,17 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(res => res.json())
         }
 
+        function updateResources(url, body){
+            return fetch(url,{
+                method: 'PATCH', 
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(body),
+            })
+            .then(res => res.json())
+        }
+
     // Rendering functions
         // Renders Header
         function renderHeader(store){
@@ -37,10 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const pPrice = document.createElement('p')
             const img = document.createElement('img')
             const btn = document.createElement('button')
+            const pInventory = document.createElement('input')
     
             h3.textContent = cardData.title
             pAuthor.textContent = cardData.author
             pPrice.textContent = `$${cardData.price}`
+            pInventory.type = 'number' //new
+            pInventory.value = cardData.inventory //new
             btn.textContent = 'Delete'
     
             img.src = cardData.imageUrl
@@ -48,8 +62,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
             //Event Listeners 
             btn.addEventListener('click',()=>li.remove())
+
+            pInventory.addEventListener('change', (e) => {
+                updateResources(`http://localhost:3000/books/${cardData.id}`, {inventory: e.target.value})
+            })
         
-            li.append(h3,pAuthor,pPrice,img,btn)
+            li.append(h3,pAuthor,pPrice, pInventory, img,btn)
             document.querySelector('#book-list').append(li)
         }
     
@@ -84,6 +102,5 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(books => books.forEach(renderBookCard))
         .catch(e => console.error(e))
     
-        document.querySelector('#book-form').addEventListener('submit', handleForm)
-    
+        document.querySelector('#book-form').addEventListener('submit', handleForm)   
 })
