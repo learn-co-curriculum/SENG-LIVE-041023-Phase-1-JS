@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
             //Event Listeners 
                 //delete
-                //optimistic rendering
+                //optimistic rendering -> pessimistic rendering
                 btn.addEventListener('click', (e) => {
                    handleDelete(cardData.id, e.target.parentElement)
                 })
