@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(res => res.json())
         }
 
+        //POST
         function createResources(url, body){
             return fetch(url,{
                 method: 'POST', 
@@ -14,9 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 body: JSON.stringify(body),
             })
-            .then(res => res.json())
+            .then(res => console.log(res.json()))
         }
 
+        //PATCH
         function updateResources(url, body){
             return fetch(url,{
                 method: 'PATCH', 
@@ -24,6 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
                   'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(body),
+            })
+            .then(res => res.json())
+        }
+
+        function deleteResources(url){
+            return fetch(url,{
+                method: 'DELETE'
             })
             .then(res => res.json())
         }
@@ -61,11 +70,15 @@ document.addEventListener('DOMContentLoaded', () => {
             li.className = 'list-li'
     
             //Event Listeners 
-            btn.addEventListener('click',()=>li.remove())
-
-            pInventory.addEventListener('change', (e) => {
-                updateResources(`http://localhost:3000/books/${cardData.id}`, {inventory: e.target.value})
+            btn.addEventListener('click', () => {
+                console.log("deleting")
+                deleteResources(`http://localhost:3000/books/${cardData.id}`)
+                li.remove()
             })
+
+
+            //PATCH
+            pInventory.addEventListener('change', (e)=> handlePatch(e, cardData))
         
             li.append(h3,pAuthor,pPrice, pInventory, img,btn)
             document.querySelector('#book-list').append(li)
@@ -101,6 +114,17 @@ document.addEventListener('DOMContentLoaded', () => {
         fetchResource('http://localhost:3000/books')
         .then(books => books.forEach(renderBookCard))
         .catch(e => console.error(e))
+
+
+        //PATCH
+        function handlePatch (e, cardData) {
+            e.preventDefault()
+            updateResources(`http://localhost:3000/books/${cardData.id}`, {inventory: e.target.value})
+            .then(data => console.log(data))
+            .catch(console.error)
+        }
+
+
     
         document.querySelector('#book-form').addEventListener('submit', handleForm)   
 })
