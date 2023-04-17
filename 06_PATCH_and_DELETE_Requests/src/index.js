@@ -40,6 +40,16 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(res => res.json()) //JSON obj => JS obj
         }
 
+        //DELETE request
+        function deleteResource(url){
+            return fetch(url, {
+                method: 'DELETE'
+            })
+            .then(res => res.json()) 
+        }
+
+
+
     // Rendering functions
         // Renders Header
         function renderHeader(store){
@@ -53,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             footerDivs[2].textContent = store.hours
         }
     
+        //renders book card
         function renderBookCard(cardData) {
             const li = document.createElement('li')
             const h3 = document.createElement('h3')
@@ -76,11 +87,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
             //Event Listeners 
                 //delete
-                btn.addEventListener('click',()=>li.remove())
+                //optimistic rendering
+                btn.addEventListener('click', (e) => {
+                   handleDelete(cardData.id, e.target.parentElement)
+                })
 
                 //patch 
                 pInventory.addEventListener("change", (e) =>  handlePatch(e, cardData))
-
         
             li.append(h3,pAuthor,pPrice,pInventory, img,btn)
             document.querySelector('#book-list').append(li)
@@ -105,7 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     
     
-    // Invoking functions    
+    // Invoking functions   
+        //GET
         fetchResource('http://localhost:3000/stores/1')
         .then(store => {
             renderHeader(store)
@@ -113,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(e => console.error(e))
     
+        //GET
         fetchResource('http://localhost:3000/books')
         .then(books => books.forEach(renderBookCard))
         .catch(e => console.error(e))
@@ -124,6 +139,13 @@ document.addEventListener('DOMContentLoaded', () => {
             , {inventory: e.target.value}) //
             .then(data => console.log(data))
             .catch(console.error)
+        }
+
+        //DELETE
+        function handleDelete(id, target){
+            deleteResource(`http://localhost:3000/books/${id}`) //invoking the delete fetch request
+                .then(() => target.remove())
+                .catch(console.error)
         }
        
     
