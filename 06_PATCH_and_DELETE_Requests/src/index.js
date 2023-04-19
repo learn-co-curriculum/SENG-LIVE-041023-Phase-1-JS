@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Invoking functions   
         //GET
-        fetchResource('http://localhost:3000/stores/1')
+        fetchResource('http://localhost:3000/stores/1')//r
         .then(store => {
             renderHeader(store)
             renderFooter(store)
@@ -147,8 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(() => target.remove())
                 .catch(console.error)
         }
-       
-    
+
         document.querySelector('#book-form').addEventListener('submit', handleForm)
     
 })
