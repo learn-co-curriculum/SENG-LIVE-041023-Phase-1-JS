@@ -1,3 +1,4 @@
+console.log("hello")
 console.log(apiKEY)
 // fetch('https://pokeapi.co/api/v2/pokemon/mewtwo/')
 // .then(res => res.json())
@@ -81,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function handleRenderSearch(){
+            console.log("helloo")
             document.querySelector('main').innerHTML = `
             <form id="api-Search">
                 <label>API Search<label>
@@ -94,6 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //Handles Google Books API search
         function handleAPIQuery(e){
             e.preventDefault()
+            
             const search = e.target.search.value
             console.log(search)
 
@@ -146,4 +149,5 @@ document.addEventListener('DOMContentLoaded', () => {
     
         document.querySelector('#book-form').addEventListener('submit', handleForm)
         document.querySelector('#nav-search').addEventListener('click', handleRenderSearch)
+
 })
