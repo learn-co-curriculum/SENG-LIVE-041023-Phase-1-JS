@@ -137,10 +137,13 @@
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/41oYsXjLvZL._SY344_BO1,204,203,200_.jpg"
     },
     {
-      "id": 8
-    },
-    {
-      "id": 9
+      "title": "s",
+      "author": "s",
+      "price": "1",
+      "imageUrl": "https://petcube.com/blog/content/images/2018/04/boo-the-dog-3.jpg",
+      "inventory": "1",
+      "reviews": [],
+      "id": 10
     }
   ]
 }
