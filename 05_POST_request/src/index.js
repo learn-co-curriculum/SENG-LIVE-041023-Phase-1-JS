@@ -3,14 +3,16 @@ document.addEventListener('DOMContentLoaded', () => {
 // Fetch requests 
     // Function for making a GET request 
     function fetchResource(url){
-        return fetch(url)
-        .then(res => res.json())
+        return fetch(`http://localhost:3000/${url}`)
+        .then(res => res.json()) 
     }
-// Rendering functions
+
+    // Rendering functions
     // Renders Header
     function renderHeader(store){
         document.querySelector('h1').textContent = store.name
     }
+
     // Renders Footer
     function renderFooter(store){
         const footerDivs = document.querySelectorAll('footer div')
@@ -54,21 +56,38 @@ document.addEventListener('DOMContentLoaded', () => {
             inventory:e.target.inventory.value,
             reviews:[]
         }
+
+        postResource("http://localhost:3000/books", book)
+
         renderBookCard(book)
     }
 
 
-// Invoking functions    
-    fetchResource('http://localhost:3000/stores/1')
-    .then(store => {
-        renderHeader(store)
-        renderFooter(store)
-    })
-    .catch(e => console.error(e))
+    function postResource(url, newData){
+        return fetch(url, {
+            method: 'POST',
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(newData)    
+        })
+        .then(res => res.json())
+    }
 
-    fetchResource('http://localhost:3000/books')
-    .then(books => books.forEach(renderBookCard))
-    .catch(e => console.error(e))
+
+
+
+// Invoking functions    
+    fetchResource('stores/1')
+        .then(store => {
+            renderHeader(store)
+            renderFooter(store)
+        })
+        .catch(e => console.error(e))
+
+    fetchResource('books')
+        .then(books => books.forEach(renderBookCard))
+        .catch(e => console.error(e))
 
     document.querySelector('#book-form').addEventListener('submit', handleForm)
 
